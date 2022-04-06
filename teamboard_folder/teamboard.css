@@ -1,0 +1,78 @@
+html,
+body {
+    /* font-family: 'Open Sans', sans-serif; */
+    background-image: url(/images/black-computer.jpg);
+    background-position: 100%;
+    background-size: cover;
+}
+
+.grid-container {
+    /* border: 0.10em solid white; */
+    margin: 6em;
+    /* background: transparent;
+    padding-left: 0.10em;
+    padding-right: 10px; */
+}
+
+.grid {
+    border: 0.25em;
+    background-image: url(/images/blackboard2.jpg);
+    background-position: 100%;
+    background-size: cover;
+}
+
+#numbercard-green {
+    background-color: #00b712;
+    background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+#numbercard-orange {
+    background-color: #f42b03;
+    background-image: linear-gradient(316deg, #f42b03 0%, #ffbe0b 74%);
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+#numbercard-red {
+    background-color: #990000;
+    background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+#numbercard-blue {
+    background-color: #0abcf9;
+    background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.card-title {
+    font-size: 35px;
+    padding-top: .20em;
+    padding-bottom: .50em;
+    font-weight: bolder;
+}
+
+.card-text {
+    font-size: 2em;
+    font-weight: bold;
+}

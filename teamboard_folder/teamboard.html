@@ -5,39 +5,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="\data_table\datatable.css" rel="stylesheet" id="text/css">
+    <title>Teamboard Tasks Page</title>
+
+    <link href="\teamboard_folder\teamboard.css" rel="stylesheet" id="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
     <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: #353535;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .content h1 {
+        #panel-box {
             text-align: center;
+            margin: 0rem 15rem;
+            /*border: 1em solid red; */
+        }
+        /* Teamboard Table */
+        
+        #content h1 {
+            border: 0.10em solid white;
+            background-color: whitesmoke;
+            text-align: center;
+            padding-bottom: 0.50em;
+            padding-top: 0.25em;
+            margin-top: 0.25em;
+            margin-bottom: 0;
+            font-weight: 700;
         }
         
         .panel {
-            border: 1px solid rgb(61, 57, 57);
+            border: 0.20em solid rgb(61, 57, 57);
             background-color: rgb(243, 241, 151);
             max-width: 100%;
         }
+        /* .panel-body { 
+            border: 1em solid chocolate;
+         } */
+        /* .form-inline { 
+            border: 0.25em solid red;
+         } */
+        
+        .table {
+            border: .25em solid purple;
+            display: flexbox;
+            align-self: center;
+            width: 100%;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 25%;
+        }
         
         .panel .btn-group {
-            margin: 15px 0 30px;
+            /*border: .25em solid yellow; */
+            margin: 2em 3em 0em;
+            width: 100%;
+            margin-left: -40%;
         }
         
         .panel .btn-group .btn {
             transition: background-color .3s ease;
         }
+        /* search box */
         
         form {
             margin-top: 15px;
+        }
+        
+        .form-control {
+            background-color: white;
         }
         
         .pagination {
@@ -212,70 +244,6 @@
             font-size: 16px;
             font-weight: bold;
         }
-        
-        .row {
-            padding-top: 8rem;
-            padding-left: 8rem;
-            padding-right: 8rem;
-            display: flex;
-            place-content: center;
-        }
-        
-        #numbercard-green {
-            background-color: #00b712;
-            background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-            border-radius: 2em;
-            display: flex;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-        }
-        
-        #numbercard-orange {
-            background-color: #f42b03;
-            background-image: linear-gradient(316deg, #f42b03 0%, #ffbe0b 74%);
-            border-radius: 2em;
-            display: flex;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-        }
-        
-        #numbercard-red {
-            background-color: #990000;
-            background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
-            border-radius: 2em;
-            display: flex;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-        }
-        
-        #numbercard-blue {
-            background-color: #0abcf9;
-            background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
-            border-radius: 2em;
-            display: flex;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-        }
-        
-        .card-title {
-            font-size: 35px;
-            padding-top: .20em;
-            padding-bottom: .50em;
-            font-weight: bolder;
-        }
-        
-        .card-text {
-            font-size: 28px;
-            font-weight: bold;
-        }
     </style>
 </head>
 
@@ -287,11 +255,11 @@
             <div class="row gx-5 justify-content-center">
 
                 <!--extra left column for centering-->
-                <div class="col-xs-4"></div>
+                <!--<div class="col-xs-4"></div>-->
 
                 <!--experiment here-->
                 <!--number card 1-->
-                <div class="col-xs-4">
+                <div class="col xs-4 col-md-6 col-lg-4 col-xl-2" id="card-size">
                     <div class="card m-3 text-white" style="min-width: 18rem; min-height: 18rem; max-width: 25rem; max-height: 25rem;" id="numbercard-green">
                         <div class="card-body">
                             <h2 class="card-title">20</h2>
@@ -301,7 +269,7 @@
                 </div>
 
                 <!--number card 2-->
-                <div class="col-xs-4" id="card">
+                <div class="col xs-4 col-md-6 col-lg-4 col-xl-2" id="card">
                     <div class="card m-3 text-white" style="min-width: 18rem; min-height: 18rem; max-width: 25rem; max-height: 25rem;" id="numbercard-orange">
                         <div class="card-body">
                             <h2 class="card-title">10</h2>
@@ -311,7 +279,7 @@
                 </div>
 
                 <!--number card 3-->
-                <div class="col-xs-4" id="card">
+                <div class="col xs-4 col-md-6 col-lg-4 col-xl-2" id="card">
                     <div class="card m-3 text-white" style="min-width: 18rem; min-height: 18rem; max-width: 25rem; max-height: 25rem;" id="numbercard-red">
                         <div class="card-body">
                             <h2 class="card-title">5</h2>
@@ -321,7 +289,7 @@
                 </div>
 
                 <!--number card 4-->
-                <div class="col-xs-4" id="card">
+                <div class="col xs-4 col-md-6 col-lg-4 col-xl-2" id="card">
                     <div class="card m-3 text-white" style="min-width: 18rem; min-height: 18rem; max-width: 25rem; max-height: 25rem;" id="numbercard-blue">
                         <div class="card-body">
                             <h2 class="card-title">8</h2>
@@ -331,253 +299,251 @@
                 </div>
 
                 <!--extra right corner for centering-->
-                <div class="col-xs-4"></div>
+                <!--<div class="col-xs-4"></div>-->
             </div>
-        </div>
 
     </section>
 
 
 
     <!---Data Table starts here-->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-lg-12 col-xl-10">
-                <section class="content">
-                    <h1>Teamboard Table</h1>
-                    <div class="justify-content-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div>
-                                    <!-- Search bar -->
-                                    <div class="col pull-left">
-                                        <form class="form-inline">
-                                            <i class="fas fa-search" aria-hidden="true"></i>
-                                            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
-                                        </form>
-                                    </div>
 
-                                    <!--sort form-->
-                                    <div class="pull-right">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-filter" data-target="to_do" id="btn-sort-green">To Do</button>
-                                            <button type="button" class="btn btn-filter" data-target="in_progress" id="btn-sort-orange">In Progress</button>
-                                            <button type="button" class="btn btn-filter" data-target="review" id="btn-sort-red">Review</button>
-                                            <button type="button" class="btn btn-filter" data-target="done" id="btn-sort-blue">Done</button>
-                                            <button type="button" class="btn btn-filter" data-target="all" id="btn-sort-white">&nbsp;All&nbsp;</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--teamboard table start here-->
-                                <div class="table-container">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr id="table-header">
-                                                <th scope="col">Check Box</th>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Task</th>
-                                                <th scope="col">Due Date</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
 
-                                            <!--Experiment here-->
-                                            <!--Row 1-->
-                                            <tr>
-                                                <td>
-                                                    <div class="ckbox">
-                                                        <input type="checkbox" id="checkbox1">
-                                                        <label for="checkbox1"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        1
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        Create a Wireframe
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        3/05/2022
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        Diana
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-orange">In Progress</button>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                                </td>
-                                            </tr>
-                                            <!--Row 2-->
-                                            <!--Experiment-->
+    <div class="col-xs-11 col-md-11 col-lg-12 col-xl-10" id="panel-box">
+        <div class="content" id="content">
+            <h1>Teamboard Table</h1>
+            <div class="justify-content-center">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div>
+                            <!-- Search bar -->
+                            <div class="col pull-left">
+                                <form class="form-inline">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                                </form>
+                            </div>
 
-                                            <!--Row 2-->
-                                            <tr>
-                                                <td>
-                                                    <div class="ckbox">
-                                                        <input type="checkbox" id="checkbox2">
-                                                        <label for="checkbox2"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        2
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        Create an HTML Table
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        2/15/2022
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        Madona
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-green">To Do</button>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                                </td>
-                                            </tr>
-                                            <!--Row 2-->
-
-                                            <!--Row 3-->
-                                            <tr>
-                                                <td>
-                                                    <div class="ckbox">
-                                                        <input type="checkbox" id="checkbox3">
-                                                        <label for="checkbox3"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        3
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        Animate Toggles
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        2/18/2022
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        Roshanell
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-red">Review</button>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                                </td>
-                                            </tr>
-                                            <!--Row 3-->
-
-                                            <!--Row 4-->
-                                            <tr>
-                                                <td>
-                                                    <div class="ckbox">
-                                                        <input type="checkbox" id="checkbox4">
-                                                        <label for="checkbox4"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        4
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        To Do List
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        2/20/2022
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        Winta
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-blue">Done</button>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                                </td>
-                                            </tr>
-                                            <!--Row 4-->
-
-                                            <!--Row 5-->
-                                            <tr>
-                                                <td>
-                                                    <div class="ckbox">
-                                                        <input type="checkbox" id="checkbox5">
-                                                        <label for="checkbox5"></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        5
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        Date Table Input
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        2/05/2022
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <h4 class="title">
-                                                        Anna
-                                                    </h4>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-blue">Done</button>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                                </td>
-                                            </tr>
-                                            <!--Row 5-->
-
-                                        </tbody>
-                                    </table>
+                            <!--sort form-->
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-filter" data-target="to_do" id="btn-sort-green">To Do</button>
+                                    <button type="button" class="btn btn-filter" data-target="in_progress" id="btn-sort-orange">In Progress</button>
+                                    <button type="button" class="btn btn-filter" data-target="review" id="btn-sort-red">Review</button>
+                                    <button type="button" class="btn btn-filter" data-target="done" id="btn-sort-blue">Done</button>
+                                    <button type="button" class="btn btn-filter" data-target="all" id="btn-sort-white">&nbsp;All&nbsp;</button>
                                 </div>
                             </div>
                         </div>
+                        <!--teamboard table start here-->
+                        <div class="table-container col-xs-11 col-md-11 col-lg-12 col-xl-10">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr id="table-header ">
+                                        <th scope="col">Check Box</th>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Task</th>
+                                        <th scope="col">Due Date</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <!--Experiment here-->
+                                    <!--Row 1-->
+                                    <tr>
+                                        <td>
+                                            <div class="ckbox">
+                                                <input type="checkbox" id="checkbox1">
+                                                <label for="checkbox1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                1
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                Create a Wireframe
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                3/05/2022
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                Diana
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-orange">In Progress</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
+                                        </td>
+                                    </tr>
+                                    <!--Row 2-->
+                                    <!--Experiment-->
+
+                                    <!--Row 2-->
+                                    <tr>
+                                        <td>
+                                            <div class="ckbox">
+                                                <input type="checkbox" id="checkbox2">
+                                                <label for="checkbox2"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                2
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                Create an HTML Table
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                2/15/2022
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                Madona
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-green">To Do</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
+                                        </td>
+                                    </tr>
+                                    <!--Row 2-->
+
+                                    <!--Row 3-->
+                                    <tr>
+                                        <td>
+                                            <div class="ckbox">
+                                                <input type="checkbox" id="checkbox3">
+                                                <label for="checkbox3"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                3
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                Animate Toggles
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                2/18/2022
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                Roshanell
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-red">Review</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
+                                        </td>
+                                    </tr>
+                                    <!--Row 3-->
+
+                                    <!--Row 4-->
+                                    <tr>
+                                        <td>
+                                            <div class="ckbox">
+                                                <input type="checkbox" id="checkbox4">
+                                                <label for="checkbox4"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                4
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                To Do List
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                2/20/2022
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                Winta
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-blue">Done</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
+                                        </td>
+                                    </tr>
+                                    <!--Row 4-->
+
+                                    <!--Row 5-->
+                                    <tr>
+                                        <td>
+                                            <div class="ckbox">
+                                                <input type="checkbox" id="checkbox5">
+                                                <label for="checkbox5"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                5
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                Date Table Input
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                2/05/2022
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <h4 class="title">
+                                                Anna
+                                            </h4>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-blue">Done</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
+                                        </td>
+                                    </tr>
+                                    <!--Row 5-->
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </section>
+                </div>
+
                 <nav aria-label="page navigation">
                     <ul class="pagination pull-right">
                         <li class="page-item">
@@ -602,8 +568,7 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-
-</body>
 
 </html>
