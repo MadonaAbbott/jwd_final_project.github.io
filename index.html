@@ -8,9 +8,10 @@
     <!-- remember to come back to this and change title-->
     <title>SiteName</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" ref="styles.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
     <!-- tiny image of sticky note with To Do written on it; can swap out for something better-->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
 
 </head>
 
@@ -100,33 +101,53 @@
                     </div>
                     <div class="col-md-6" style="height:400px;">
                         <div class="row d-flex align-items-center justify-content-center">
-                            <div class="card mt-4" style="background-color:lightgoldenrodyellow; height: 0; width: 75%; padding-bottom:75%">
-                                <div class="card-body">
-                                    <h4 class="card-title">Add a new task</h4>
-                                    <div class="form-group">
-                                        <!--<label for="taskName">Task name:</label> -->
-                                        <input type="text" class="form-control" id="taskName" placeholder="Task name:">
-                                        <br>
-                                        <!-- <label for="taskDescription">Description:</label> -->
-                                        <input type="text" class="form-control" id="taskDescription" placeholder="Description:">
-                                        <br>
-                                        <!-- <label for="taskAssignedTo">Assigned to:</label> -->
-                                        <input type="text" class="form-control" id="taskAssignedTo" placeholder="Assigned to:">
-                                        <br>
-                                        <!-- <label for="taskDueDate">Due date:</label> -->
-                                        <input type="text" class="form-control" id="taskDueDate" placeholder="Due date:">
-                                        <label for="taskStatus">Status:</label>
-                                        <select class="form-control" id="taskStatus">
-                                                    <option>To do</option>
-                                                    <option>In progress</option>
-                                                    <option>Review</option>
-                                                    <option>Done</option>
-                                                </select>
-                                        <div class="text-right">
-                                            <button type="submit" class="btn btn-primary btn-sm text-right mt-2 mb-2">Submit</button>
-                                        </div>
-                                    </div>
+                            <div class="form-container">
+                                <div class="header">
+                                    <h2>Add a new task</h2>
                                 </div>
+                                <form class="form" id="form">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Task Name" id="taskName" oninput="return typeFinished();">
+                                        <!-- <div class="alert alert-danger" role="alert" id="errorTaskName">
+                                            A simple danger alert—check it out!
+                                        </div> -->
+                                        <small>please insert task name</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="descriptionTask" placeholder="Task Description" id="taskDescription" oninput="return typeFinished();">
+                                        <small>please insert task description</small>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="assignTask" placeholder="Assign To" id="taskAssignedTo" oninput="return typeFinished();">
+                                        <small>please insert assignee</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="duedate">Due Date:</label>
+                                        <input type="date" id="taskDueDate" name="taskDueDate" oninput="return typeFinished();">
+                                        <small>please insert due date</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="labelStatus">Status:</label>
+                                        <select class="form-status" id="taskStatus" oninput="return typeFinished();">
+                                        <option></option>
+                                        <option>To do</option>
+                                        <option>In progress</option>
+                                        <option>Review</option>
+                                        <option>Done</option>
+                                        </select>
+                                        <small>please select status</small>
+                                    </div>
+
+                                    <!-- <button type="button" class="btn-close" data-bs-dismiss="alert"></button> -->
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary btn-sm text-center mt-2 mb-2">Submit</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

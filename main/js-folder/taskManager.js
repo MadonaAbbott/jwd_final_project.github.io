@@ -3,12 +3,11 @@
 class TaskManager {
     constructor(currentId = 0) {
         this.tasks = [];
-        this.currentId = currentId;    
+        this.currentId = currentId;
     }
-    addTask(name, description, assignedTo, dueDate)
-     {  
-        this.currentId ++;
-        const task = { 
+    addTask(name, description, assignedTo, dueDate) {
+        this.currentId++;
+        const task = {
             name: name,
             description: description,
             assignedTo: assignedTo,
@@ -17,7 +16,7 @@ class TaskManager {
             id: this.currentId
         }
 
-    this.tasks.push(task)
+        this.tasks.push(task)
     }
 }
 //tested this in console:
