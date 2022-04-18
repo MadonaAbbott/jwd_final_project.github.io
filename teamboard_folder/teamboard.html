@@ -40,12 +40,6 @@
             background-color: rgb(243, 241, 151);
             max-width: 100%;
         }
-        /* .panel-body { 
-            border: 1em solid chocolate;
-         } */
-        /* .form-inline { 
-            border: 0.25em solid red;
-         } */
         
         .table {
             border: .25em solid purple;
@@ -83,60 +77,9 @@
             position: relative;
         }
         
-        .ckbox {
-            position: relative;
-        }
-        
-        .ckbox input[type="checkbox"] {
-            opacity: 0;
-        }
-        
-        .ckbox label:before {
-            content: '';
-            top: 1px;
-            left: 0;
-            width: 18px;
-            height: 18px;
-            display: block;
-            position: absolute;
-            border-radius: 2px;
-            border: 1px solid #bbb;
-            background-color: #fff;
-        }
-        
-        .ckbox input[type="checkbox"]:checked+label:before {
-            border-color: #2BBCDE;
-            background-color: #2BBCDE;
-        }
-        
-        .ckbox input[type="checkbox"]:checked+label:after {
-            top: 3px;
-            left: 3.5px;
-            content: '\e013';
-            color: #fff;
-            font-size: 11px;
-            font-family: 'Glyphicons Halflings';
-            position: absolute;
-        }
-        
-        #btn-orange {
-            background-color: #f42b03;
-            background-image: linear-gradient(316deg, #f42b03 0%, #ffbe0b 74%);
-            border: none;
-            color: white;
-            height: 38px;
-            width: 120px;
-            padding: 8px 15px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
         #btn-manage {
-            background-color: #00bfb2;
-            background-image: linear-gradient(315deg, #00bfb2 0%, #028090 74%);
+            background-color: #990000;
+            background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
             border: none;
             color: white;
             height: 38px;
@@ -160,92 +103,6 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        #btn-red {
-            background-color: #990000;
-            background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
-            border: none;
-            color: white;
-            height: 38px;
-            width: 120px;
-            padding: 8px 15px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        #btn-blue {
-            background-color: #0abcf9;
-            background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
-            border: none;
-            color: white;
-            height: 38px;
-            width: 120px;
-            padding: 8px 15px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        #btn-sort-red {
-            background-color: #990000;
-            background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        #btn-sort-blue {
-            background-color: #0abcf9;
-            background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        #btn-sort-orange {
-            background-color: #f42b03;
-            background-image: linear-gradient(316deg, #f42b03 0%, #ffbe0b 74%);
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        #btn-sort-green {
-            background-color: #00b712;
-            background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        #btn-sort-white {
-            background-color: #ffffff;
-            background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
-            color: black;
-            text-align: center;
-            text-decoration: none;
-            display: flex;
-            justify-content: center;
             font-size: 16px;
             font-weight: bold;
         }
@@ -290,7 +147,6 @@
         <div class="grid-container overflow-hidden">
             <div class="row gx-5 justify-content-center">
 
-                <!--extra left column for centering-->
                 <!--<div class="col-xs-4"></div>-->
 
                 <!--experiment here-->
@@ -360,251 +216,88 @@
                                 </form>
                             </div>
 
-                            <!--sort form-->
-                            <div class="pull-right">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-filter" data-target="to_do" id="btn-sort-green">To Do</button>
-                                    <button type="button" class="btn btn-filter" data-target="in_progress" id="btn-sort-orange">In Progress</button>
-                                    <button type="button" class="btn btn-filter" data-target="review" id="btn-sort-red">Review</button>
-                                    <button type="button" class="btn btn-filter" data-target="done" id="btn-sort-blue">Done</button>
-                                    <button type="button" class="btn btn-filter" data-target="all" id="btn-sort-white">&nbsp;All&nbsp;</button>
-                                </div>
+
+                            <!--teamboard table start here-->
+                            <div class="table-container col-xs-11 col-md-11 col-lg-12 col-xl-10">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr id="table-header">
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Task</th>
+                                            <th scope="col">Due Date</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <!--Experiment here-->
+                                        <!--Row 1-->
+                                        <div class="list-group" id="tasksList">
+                                            <tr class="teamboard-table-row">
+                                                <td>
+                                                    <h4 class="title">
+                                                        1
+                                                    </h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="title">
+                                                        Create a Wireframe
+                                                    </h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="title">
+                                                        3/05/2022
+                                                    </h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="title">
+                                                        Diana
+                                                    </h4>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-filter" id="btn-green">Done</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-filter" id="btn-manage">Delete</button>
+                                                </td>
+                                            </tr>
+                                        </div>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <!--teamboard table start here-->
-                        <div class="table-container col-xs-11 col-md-11 col-lg-12 col-xl-10">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr id="table-header ">
-                                        <th scope="col">Check Box</th>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Task</th>
-                                        <th scope="col">Due Date</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <!--Experiment here-->
-                                    <!--Row 1-->
-                                    <tr>
-                                        <td>
-                                            <div class="ckbox">
-                                                <input type="checkbox" id="checkbox1">
-                                                <label for="checkbox1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                1
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                Create a Wireframe
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                3/05/2022
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                Diana
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-orange">In Progress</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                        </td>
-                                    </tr>
-                                    <!--Row 2-->
-                                    <!--Experiment-->
-
-                                    <!--Row 2-->
-                                    <tr>
-                                        <td>
-                                            <div class="ckbox">
-                                                <input type="checkbox" id="checkbox2">
-                                                <label for="checkbox2"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                2
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                Create an HTML Table
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                2/15/2022
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                Madona
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-green">To Do</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                        </td>
-                                    </tr>
-                                    <!--Row 2-->
-
-                                    <!--Row 3-->
-                                    <tr>
-                                        <td>
-                                            <div class="ckbox">
-                                                <input type="checkbox" id="checkbox3">
-                                                <label for="checkbox3"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                3
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                Animate Toggles
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                2/18/2022
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                Roshanell
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-red">Review</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                        </td>
-                                    </tr>
-                                    <!--Row 3-->
-
-                                    <!--Row 4-->
-                                    <tr>
-                                        <td>
-                                            <div class="ckbox">
-                                                <input type="checkbox" id="checkbox4">
-                                                <label for="checkbox4"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                4
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                To Do List
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                2/20/2022
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                Winta
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-blue">Done</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                        </td>
-                                    </tr>
-                                    <!--Row 4-->
-
-                                    <!--Row 5-->
-                                    <tr>
-                                        <td>
-                                            <div class="ckbox">
-                                                <input type="checkbox" id="checkbox5">
-                                                <label for="checkbox5"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                5
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                Date Table Input
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                2/05/2022
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="title">
-                                                Anna
-                                            </h4>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-blue">Done</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-filter" id="btn-manage">Manage</button>
-                                        </td>
-                                    </tr>
-                                    <!--Row 5-->
-
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
-                </div>
 
-                <nav aria-label="page navigation">
-                    <ul class="pagination pull-right">
-                        <li class="page-item">
-                            <span class="page-link">Previous</span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active">
-                            <span class="page-link">
+                    <nav aria-label="page navigation">
+                        <ul class="pagination pull-right">
+                            <li class="page-item">
+                                <span class="page-link">Previous</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                                <span class="page-link">
                           2
                           <span class="sr-only">(current)</span>
-                            </span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                                </span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+        <script src="main\js-folder\taskManager.js"></script>
+        <script src="\main\js-folder\index.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
 </html>
