@@ -8,7 +8,7 @@
     <!-- remember to come back to this and change title-->
     <title>SiteName</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <!-- tiny image of sticky note with To Do written on it; can swap out for something better-->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
@@ -101,122 +101,78 @@
                     </div>
                     <div class="col-md-6" style="height:400px;">
                         <div class="row d-flex align-items-center justify-content-center">
-                            <div class="form-container">
+
+                            <!-- <div class="card-body"> -->
+                            <div class="card-form">
                                 <div class="header">
                                     <h2>Add a new task</h2>
                                 </div>
-                                <form class="form" id="form">
+                                <!-- start of form -->
+                                <form id="newTaskForm" class="form" method="GET" action="managetasks_folder\managetasks2.html">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Task Name" id="taskName" oninput="return typeFinished();">
-                                        <!-- <div class="alert alert-danger" role="alert" id="errorTaskName">
-                                            A simple danger alert—check it out!
-                                        </div> -->
-                                        <small>please insert task name</small>
+                                        <input type="text" name="nametask" placeholder="Task Name" id="newTaskNameInput" oninput="timeout();">
+
+                                        <p id='tasknameError'></p>
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="descriptionTask" placeholder="Task Description" id="taskDescription" oninput="return typeFinished();">
-                                        <small>please insert task description</small>
-
+                                        <input type="text" name="nameDescription" placeholder="Task Description" id="newTaskDescription" oninput="timeout();">
+                                        <p id='descriptionError'></p>
                                     </div>
+
 
                                     <div class="form-group">
-                                        <input type="assignTask" placeholder="Assign To" id="taskAssignedTo" oninput="return typeFinished();">
-                                        <small>please insert assignee</small>
+                                        <input type="text" name="nameAssign" placeholder="Assign To" id="newTaskAssignedTo" oninput="timeout();">
+                                        <p id='assignError'></p>
                                     </div>
 
+
+                                    <!--  calendar  -->
                                     <div class="form-group">
-                                        <label for="duedate">Due Date:</label>
-                                        <input type="date" id="taskDueDate" name="taskDueDate" oninput="return typeFinished();">
-                                        <small>please insert due date</small>
+                                        <label for="duedate"><strong>Due Date:</strong></label>
+                                        <input type="date" id="newTaskDueDate" name="nameDueDate" oninput="timeout();">
+                                        <p id="dueDateError"></p>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="labelStatus">Status:</label>
-                                        <select class="form-status" id="taskStatus" oninput="return typeFinished();">
-                                        <option></option>
-                                        <option>To do</option>
-                                        <option>In progress</option>
-                                        <option>Review</option>
-                                        <option>Done</option>
-                                        </select>
-                                        <small>please select status</small>
-                                    </div>
-
-                                    <!-- <button type="button" class="btn-close" data-bs-dismiss="alert"></button> -->
-                                    <div class="text-right">
-                                        <button type="submit" class="btn btn-primary btn-sm text-center mt-2 mb-2">Submit</button>
+                                    <!-- submit button -->
+                                    <div class="button">
+                                        <button type="submit" class="submit-button">Submit</button>
                                     </div>
                                 </form>
+
+                                <!-- end of form -->
+                                <!-- </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
-        <div class="container">
-            <a id="mytasks">
-                <h4 class="card-title">My tasks</h4>
-            </a>
-            <div class="row">
-                <div class="card mr-2" style="width: 19%; background-color: lightpink;">
-                    <div class="card-body">
-                        <h5 class="card-title">Task 1</h5>
-                        <p class="card-text">Create wireframes</p>
-                        <p class="card-text">FirstName LastName</p>
-                        <p class="card-text">Due 3/1/22</p>
-                        <span class="badge badge-secondary">To do</span>
-                        <a href="#" class="btn btn-primary btn-sm">Delete</a>
-                    </div>
-                </div>
-                <div class="card mr-2" style="width: 19%; background-color: lightpink;">
-                    <div class="card-body">
-                        <h5 class="card-title">Task 2</h5>
-                        <p class="card-text">Write basic HTML</p>
-                        <p class="card-text">FirstName LastName</p>
-                        <p class="card-text">Due 3/2/22</p>
-                        <span class="badge badge-info">In progress</span>
-                        <a href="#" class="btn btn-primary btn-sm">Delete</a>
-                    </div>
-                </div>
-                <div class="card mr-2" style="width: 19%; background-color: lightpink;">
-                    <div class="card-body">
-                        <h5 class="card-title">Task 3</h5>
-                        <p class="card-text">Add CSS</p>
-                        <p class="card-text">FirstName LastName</p>
-                        <p class="card-text">Due 3/3/22</p>
-                        <span class="badge badge-warning">Review</span>
-                        <a href="#" class="btn btn-primary btn-sm">Delete</a>
-                    </div>
-                </div>
-                <div class="card mr-2" style="width: 19%; background-color: lightpink;">
-                    <div class="card-body">
-                        <h5 class="card-title">Task 4</h5>
-                        <p class="card-text">Testing</p>
-                        <p class="card-text">FirstName LastName</p>
-                        <p class="card-text">Due 3/4/22</p>
-                        <span class="badge badge-success">Done</span>
-                        <a href="#" class="btn btn-primary btn-sm">Delete</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 19%; background-color: lightpink;">
-                    <div class="card-body">
-                        <h5 class="card-title">Task 5</h5>
-                        <p class="card-text">Make corrections</p>
-                        <p class="card-text">FirstName LastName</p>
-                        <p class="card-text">Due 3/5/22</p>
-                        <span class="badge badge-info">In progress</span>
-                        <a href="#" class="btn btn-primary btn-sm">Delete</a>
-                    </div>
-                </div>
-            </div>
+    </div>
+
+
+
+    <!-- this is the sample taskslist -->
+    <section class="grid" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url(images/backgroundimage.jpg);">
+        <div class="task-card-title">
+            <h2>MANAGE TASKS</h2>
         </div>
-    </div>
-    </div>
-    <script src="/main/js-folder/taskManager.js"></script>
-    <script src="/main/js-folder/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <div class="row-taskcard" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url(images/backgroundimage.jpg);">
+            <ul class="list-group" id="tasksList">
+
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="/main/js-folder/taskManager.js "></script>
+    <script src="/main/js-folder/index.js "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+
 </body>
 
 </html>
