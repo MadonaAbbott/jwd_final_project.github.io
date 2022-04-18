@@ -5,7 +5,7 @@ const createTaskHtml = (id, taskname, description, assignedTo, dueDate, status) 
 
   <li class="card m-4" id="task-card" style="width: 20rem;" data-task-id=${id}>
     <div class="card-header text-center text-white bg-dark" id="card-header">
-        <h5>Task ID: ${id}></h5>
+        <h5>Task ID:${id}</h5>
     </div>
     <div class="card-body text-white bg-info">
         <h4 class="card-title text-center">${taskname}</h4>
@@ -103,7 +103,7 @@ class TaskManager {
             const task = this.tasks[i];
 
             const date = new Date(task.dueDate);
-            const formattedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear(); //code for getting the calendar date
+            const formattedDate = (date.getDate() + 1) + '/' + (date.getMonth() + 1) + '/' + date.getFullYear(); //code for getting the calendar date
 
             //Pass the task id as a parameter
 

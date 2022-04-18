@@ -153,6 +153,7 @@ function validate() {
         data = true
     }
 
+    //the alerts will not show up after submission
     if (newTaskNameInput.value == '' && newTaskDescription.value == '' && newTaskAssignedTo.value == '' && newTaskDueDate.value == '') {
         newTaskNameInput.style.borderColor = ""
         newTaskNameInput.style.outline = ""
