@@ -55,6 +55,7 @@ newTaskForm.addEventListener('submit', (event) => {
     newTaskAssignedTo.value = '';
     newTaskDueDate.value = '';
 
+
 });
 
 // This is the timer for the form field input
@@ -153,6 +154,7 @@ function validate() {
         data = true
     }
 
+    //the alerts will not show up after submission
     if (newTaskNameInput.value == '' && newTaskDescription.value == '' && newTaskAssignedTo.value == '' && newTaskDueDate.value == '') {
         newTaskNameInput.style.borderColor = ""
         newTaskNameInput.style.outline = ""
@@ -220,3 +222,36 @@ tasksList.addEventListener('click', (event) => {
     }
 
 });
+
+
+
+
+
+// // THIS IS THE TEAMBOARD TABLE
+
+// function addCourse() {
+//     let i = 1;
+//     const row = table.insertRow(i);
+//     let cell1 = row.insertCell(0);
+//     let cell2 = row.insertCell(1);
+//     let cell3 = row.insertCell(2);
+//     let cell4 = row.insertCell(3);
+//     // let cell5 = row.insertCell(4);
+//     // let cell6 = row.insertCell(5);
+
+//     // const newTaskNameInput;
+
+//     newTaskNameInput = document.getElementById("newTaskNameInput").value;
+//     newTaskDescription = document.getElementById("newTaskDescription").value;
+//     newTaskAssignedTo = document.getElementById("newTaskAssignedTo").value;
+//     newTaskDueDate = document.getElementById("newTaskDueDate").value;
+//     // done-button = document.querySelector(".done-button").value;
+//     // delete-button = document.querySelector(".delete-button").value;
+
+//     cell1.innerHTML = newTaskNameInput.value;
+//     cell2.innerHTML = newTaskDescription.value;
+//     cell3.innerHTML = newTaskAssignedTo.value;
+//     cell4.innerHTML = newTaskDueDate.value;
+//     // cell5.innerHTML = done-button.value;
+//     // cell6.innerHTML = delete-button.value;
+// }
