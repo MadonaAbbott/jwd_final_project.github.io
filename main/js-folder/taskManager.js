@@ -95,7 +95,7 @@ class TaskManager {
         return foundTask;
     }
 
-    //code to show the outcome in the browser
+
     render() {
         const tasksHtmlList = [];
 
